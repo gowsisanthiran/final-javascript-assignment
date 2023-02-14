@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</script>
+
+<style type="text/css">
+#load{
+    position:fixed;
+    z-index:99999;
+    background:url("loader.gif") no-repeat center center rgba(0,0,0,0.75);
+    width:100%;
+    height:100%;
+}
+</style>
+</head>
+<body>
+    <div id="load"></div>
+<div id="contents">
+    Your content here
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+    // Loader
+    document.onreadystatechange = function () {
+      var state = document.readyState
+      if (state == 'interactive') {
+       document.getElementById('contents').style.visibility="hidden";
+      } else if (state == 'complete') {
+        setTimeout(function(){
+          document.getElementById('interactive');
+          document.getElementById('load').style.visibility="hidden";
+          document.getElementById('contents').style.visibility="visible";
+        },12000);
+      }
+    }
+    </script>
+</body>
+</html>
